@@ -1,15 +1,16 @@
 ALGORITHM insertion_sort
 VAR
     i,j,key:INTEGER;
+    arr : ARRAY_OF INTEGER[];
 BEGIN
     FOR i FROM 1 TO arr.length-1 DO
          j = i-1;
          key:=arr[i];
          WHILE (j >= 0 and arr[j] > aux) DO
-        gi     arr[j] := arr[j - 1];
-             arr[j - 1] := key;
+             arr[j+1] := arr[j - 1];
              j:=j-1;
          END_WHILE 
+       arr[j + 1] := key;
 
     END_FOR
 END
