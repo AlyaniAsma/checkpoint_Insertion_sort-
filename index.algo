@@ -1,0 +1,24 @@
+FUNCTION insertion_sort(arr:ARRAY_OF INTEGER[],n:INTEGER):ARRAY_OF INTEGER
+VAR
+    i,j,key:INTEGER;
+BEGIN
+    FOR i FROM 1 TO n-1 STEP 1  DO
+         j = i;
+         WHILE (j > 0 et arr[j - 1] > arr[j]) DO
+             key := arr[j];
+             arr[j] := arr[j - 1];
+             arr[j - 1] := key;
+             j:=j-1;
+         END_WHILE        
+    END_FOR
+    RETURN arr;
+END
+ALGORITHM Tri_Insertion
+VAR
+    n:INTEGER;
+    arr,tri : ARRAY_OF integer[];
+BEGIN
+    write(n);
+    write(arr);
+    tri:=insertion_sort(arr, n);
+END
